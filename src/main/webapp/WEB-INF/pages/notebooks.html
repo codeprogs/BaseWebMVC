@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr th:each="notebook: ${notebooks}">
+            <td th:text="${notebook.firm}"/>
+            <td th:text="${notebook.model}"/>
+            <td th:text="${notebook.diagonal}"/>
+            <td th:text="${notebook.operSys.OSName}"/>
+            <td th:text="${notebook.operSys.family}"/>
+        </tr>
+    </table>
+    <form action="" method="get">
+        <label for="firm">Name: </label>
+        <input type="text" name="firm" id="firm">
+        <br><label for="model">Model: </label>
+        <input type="text" name="model" id="model">
+        <br><label for="diagonal">Diagonal: </label>
+        <input type="text" name="diagonal" id="diagonal">
+        <br><label for="oSName">Operation Sysytem: </label>
+        <input type="text" name="oSName" id="oSName">
+        <br><label for="family">Family OS</label>
+        <input type="text" name="family" id="family">
+        <br><input type="submit" value="Add NoteBook">
+    </form>
+    <style>
+        tr {
+            background-color: beige;
+        }
+        form {
+            background-color: blanchedalmond;
+        }
+    </style>
+</body>
+</html>
