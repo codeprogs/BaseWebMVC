@@ -12,6 +12,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class OperSys {
+
     private String oSName;
+
     private String family;
+
 }

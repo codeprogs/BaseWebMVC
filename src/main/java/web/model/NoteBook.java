@@ -10,8 +10,13 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 public class NoteBook {
+
     private String firm;
+
     private String model;
+
     private String diagonal;
+
     private OperSys operSys;
+
 }

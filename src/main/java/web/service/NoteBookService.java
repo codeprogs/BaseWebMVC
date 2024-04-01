@@ -19,19 +19,24 @@ public class NoteBookService {
 
     private final NoteBookDao noteBookDao;
 
-    public void addNew(Map<String, String> allParams){
+    public void addNew(Map<String, String> allParams) {
+
         OperSys win = OperSys.builder()
                 .oSName(allParams.get("oSName"))
                 .family(allParams.get("family"))
                 .build();
+
         NoteBook noteBook = NoteBook.builder()
                 .firm(allParams.get("firm"))
                 .model(allParams.get("model"))
                 .diagonal(allParams.get("diagonal"))
                 .operSys(win)
                 .build();
+
         noteBookDao.add(noteBook);
+
         System.out.println("Добавлен - " + noteBook);
+
     }
 
     public List<NoteBook> getAll() {
