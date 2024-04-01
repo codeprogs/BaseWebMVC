@@ -1,7 +1,10 @@
 package web.service;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import web.dao.NoteBookDao;
 import web.model.NoteBook;
@@ -10,9 +13,11 @@ import web.model.OperSys;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-
+@Service
+@RequiredArgsConstructor
 public class NoteBookService {
-    private final NoteBookDao noteBookDao = new NoteBookDao();
+
+    private final NoteBookDao noteBookDao;
 
     public void addNew(Map<String, String> allParams){
         OperSys win = OperSys.builder()
